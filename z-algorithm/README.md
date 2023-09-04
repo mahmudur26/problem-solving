@@ -1,4 +1,4 @@
-#Z-Algorithm
+# Z-Algorithm
 
 ```
 word as string
@@ -20,4 +20,4 @@ end loop
 
 ```
 
-##Complexity: O(n^2)
+### Complexity: O(n^2)
