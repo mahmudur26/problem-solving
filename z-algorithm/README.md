@@ -19,3 +19,5 @@ run for loop for each value from position 1
 end loop
 
 ```
+
+##Complexity: O(n^2)
