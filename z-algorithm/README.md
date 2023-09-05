@@ -20,4 +20,4 @@ end loop
 
 ```
 
-### Complexity: O(n^2)
+### Complexity: O(n*pattern_length)
