@@ -1,44 +1,33 @@
-function getZarr(string) {
-  const n = string.length;
-  const z = new Array(n).fill('X');
-  let l = 0, r = 0, k = 0;
-
-  for (let i = 1; i < n; i++) {
-    if (i > r) {
-      l = i;
-      r = i;
-      while (r < n && string[r - 1] === string[r]) {
-        r++;
-      }
-      z[i] = r - l;
-      r--;
-    } else {
-      k = i - l;
-      if (z[k] < r - i + 1) {
-        z[i] = z[k];
-      } else {
-        l = i;
-        while (r < n && string[r - 1] === string[r]) {
-          r++;
-        }
-        z[i] = r - l;
-        r--;
-      }
-    }
-  }
-  return z;
-}
-
 var word = 'AACMAACXY';
 let pattern = 'AAC';
+//AACAACMAACXY
+let string = pattern.concat('#').concat(word);
 
-var z = [];
-z[0] = 'X';
+const string_length = string.length;
+const z = new Array(string_length).fill(0);
+let left = 0, right = 0, key = 0;
 
-let pattern_length = pattern.length;
-let new_word = pattern.concat('#').concat(word);
-
-// Example usage:
-const zArray = getZarr(new_word);
-console.log(zArray);
-
+for (let i = 1; i < string_length; i++) {
+  if (i > right) {
+    left = i;
+    right = i;
+    while (right < string_length && string[right - 1] === string[right]) {
+      right++;
+    }
+    z[i] = right - left;
+    right--;
+  } else {
+    key = i - left;
+    if (z[key] < right - i + 1) {
+      z[i] = z[key];
+    } else {
+      left = i;
+      while (right < string_length && string[right - 1] === string[right]) {
+        right++;
+      }
+      z[i] = right - left;
+      right--;
+    }
+  }
+}
+console.log(z);
