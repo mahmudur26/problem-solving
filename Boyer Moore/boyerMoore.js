@@ -27,7 +27,7 @@ class BoyerMoore {
         }
         
         if (j < 0) {
-          console.log(`Pattern found at position: ${shift}`);
+          console.log(shift);
           shift += (shift + patternLength < textLength)
             ? patternLength - this.badCharacter[text.charCodeAt(shift + patternLength)]
             : 1;
@@ -39,8 +39,8 @@ class BoyerMoore {
   }
   
   // Example usage:
-  const pattern = "example";
-  const text = "This is an example text. Here's an example sentence.";
+  const pattern = "AAC";
+  const text = "AACMNAAXAAC";
   const bm = new BoyerMoore(pattern);
   bm.searchPattern(text);
   
