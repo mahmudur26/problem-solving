@@ -28,9 +28,7 @@ class BoyerMoore {
         
         if (j < 0) {
           console.log(shift);
-          shift += (shift + patternLength < textLength)
-            ? patternLength - this.badCharacter[text.charCodeAt(shift + patternLength)]
-            : 1;
+          shift += (shift + patternLength) < textLength ? patternLength - this.badCharacter[text.charCodeAt(shift + patternLength)] : 1;
         } else {
           shift += Math.max(1, j - this.badCharacter[text.charCodeAt(shift + j)]);
         }
