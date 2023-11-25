@@ -6,7 +6,7 @@ function search(text, pattern) {
 
     for (let i = 0; i < l; ++i) {
         if (Z[i] === pattern.length) {
-            console.log("Pattern found at index " + (i - pattern.length - 1));
+            console.log((i - pattern.length - 1));
         }
     }
 }
